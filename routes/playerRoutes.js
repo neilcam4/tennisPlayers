@@ -15,9 +15,19 @@ router.get('/players', function(req,res){
         }
     })
 })
-// add new player
+// get new player page
 router.get('/players/new', function(req,res){
         res.render('new')
     })
 
+// add new player with parameters from form
+router.post('/players/new', function(req,res){
+    Player.create(req.body.players, function(error, player){
+        if(error){
+            res.redirect('/players/new')
+        } else {
+            res.redirect('/players')
+        }
+    })
+})
 module.exports = router;

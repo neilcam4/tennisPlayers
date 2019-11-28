@@ -1,6 +1,25 @@
-<% include partials/header %>
-<h1>Add Tennis Legend</h1>
-
-
-
-<% include partials/footer %>
+<% include ./partials/header %>
+<div class="ui main text container segment" style="margin-top:80px;">
+    <h1>Add new Tennis Legend</h1>
+<form class="ui form" action = '/players/new' method='POST'>
+  <div class="field">
+    <label>Name</label>
+    <input type="text" name="players[name]" placeholder="First Name">
+  </div>
+  <div class="field">
+    <label>Age</label>
+    <input type="text" name="players[age]" placeholder="Age">
+  </div>
+    <div class="field">
+    <label>Titles</label>
+    <input type="text" name="players[grandslams]" placeholder="Number of Titles">
+  </div>
+    <div class="field">
+    <label>Nationality</label>
+    <input type="text" name="players[country]" placeholder="Nationality">
+  </div>
+  
+  <button class="ui button inverted blue" type="submit">Submit</button>
+</form>
+</div>
+<% include ./partials/footer %>
