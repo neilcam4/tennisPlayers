@@ -21,7 +21,7 @@ router.get('/players/new', function(req,res){
     })
 
 // add new player with parameters from form
-router.post('/players/new', function(req,res){
+router.post('/players', function(req,res){
     Player.create(req.body.players, function(error, player){
         if(error){
             res.redirect('/players/new')

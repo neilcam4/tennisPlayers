@@ -1,7 +1,29 @@
 <% include ./partials/header %>
 <div class="ui main text container segment" style="margin-top:80px;">
+<h1>Add Tennis Player to the Hall of Fame</h1>
+<form method ="post" action = "/players" class="ui form">
+    <div class="field">
+        <label>Name</label>
+        <input type= "text" name ="players[name]" placeholder="First Name">
+    </div>
+    <div class="field">
+            <label>Age</label>
+            <input type= "text" name ="players[age]" placeholder="Age">
+    </div>
+    <div class="field">
+            <label>Grand Slams</label>
+            <input type= "text" name ="players[grandslams]" placeholder="Grand Slams">
+    </div>
+    <div class="field">
+            <label>Country</label>
+            <input type= "text" name ="players[country]" placeholder="Country">
+    </div>
+    <button class="ui button inverted blue" type="submit">Submit</button>
+</form>
+</div>
+<!-- <div class="ui main text container segment" style="margin-top:80px;">
     <h1>Add new Tennis Legend</h1>
-<form class="ui form" action = '/players/new' method='POST'>
+<form class="ui form" action = '/players' method='POST'>
   <div class="field">
     <label>Name</label>
     <input type="text" name="players[name]" placeholder="First Name">
@@ -21,5 +43,5 @@
   
   <button class="ui button inverted blue" type="submit">Submit</button>
 </form>
-</div>
+</div> -->
 <% include ./partials/footer %>
