@@ -11,7 +11,7 @@ router.get('/players', function(req,res){
         if(error){
             res.redirect('/players/new')
         } else {
-            res.render('players')
+            res.render('players', {players:players})
         }
     })
 })
@@ -30,4 +30,5 @@ router.post('/players', function(req,res){
         }
     })
 })
+
 module.exports = router;
