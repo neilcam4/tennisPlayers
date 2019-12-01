@@ -3,7 +3,13 @@ let router = express.Router()
 let Player = require('../models/Player')
 // get homepage
 router.get('/', function(req,res){
-    res.render("home")
+    Player.find({}, function(error, players){
+        if(error){
+            res.redirect('/players/new')
+        } else {
+            res.render('players', {players:players})
+        }
+    })
 })
 //get list of legends
 router.get('/players', function(req,res){
