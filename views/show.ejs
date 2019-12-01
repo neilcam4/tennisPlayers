@@ -24,6 +24,9 @@
       </span>
     </div>
     <a id="edit" class="ui basic button blue" href='/players/<%=players._id%>/edit'>Edit</a>
+    <form action ='/players/<%=players._id%>?_method=DELETE' method="POST" id="delete"><button class="ui red basic button">
+  Delete
+</button></form>
   </div>
 </div>
 

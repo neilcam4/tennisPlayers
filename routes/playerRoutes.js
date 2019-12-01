@@ -69,6 +69,15 @@ router.put('/players/:id', function(req,res){
         }
     });
 });
-
+// delete player
+router.delete('/players/:id', function(req,res){
+    Player.findByIdAndDelete(req.params.id, function(error, player){
+        if(error){
+            res.redirect('/players')
+        } else {
+            res.redirect('/players')
+        }
+    })
+})
 
 module.exports = router;
