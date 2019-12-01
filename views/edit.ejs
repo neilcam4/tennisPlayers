@@ -1,0 +1,26 @@
+<% include ./partials/header %>
+
+<div class="ui main text container segment" style="margin-top:80px;">
+    <h1>Edit <%= players.name %></h1>
+<form class="ui form" action = '/players/<%= players._id %>?_method=PUT' method='POST'>
+  <div class="field">
+    <label>Name</label>
+    <input type="text" name="players[name]" value="<%=players.name %>">
+  </div>
+  <div class="field">
+    <label>Age</label>
+    <input type="text" name="players[age]" value="<%= players.age %>">
+  </div>
+    <div class="field">
+    <label>Titles</label>
+    <input type="text" name="players[grandslams]" value="<%= players.grandslams %>">
+  </div>
+    <div class="field">
+    <label>Nationality</label>
+    <input type="text" name="players[country]" value="<%=players.country %>">
+  </div>
+  
+  <button class="ui button inverted blue" type="submit">Submit</button>
+</form>
+</div>
+<% include ./partials/footer %></div>

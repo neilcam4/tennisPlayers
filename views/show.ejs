@@ -1,0 +1,30 @@
+<% include ./partials/header %>
+
+<div class="ui link cards centered">
+  <div class="card">
+    <div class="image">
+      <img src="https://static1.squarespace.com/static/56ba5828d210b8390263bb70/t/56c4e56d5559866496ce6bd6/1455744366134/love.jpg?format=500w">
+    </div>
+    <div class="content">
+      <div class="header"><%=players.name%></div>
+      <div class="meta">
+        <a href="/players/<%=players._id %>">Read More</a>
+      </div>
+      <div class="description">
+        <%=players.country%>
+      </div>
+    </div>
+    <div class="extra content">
+      <span class="right floated"><p>Grand Slams:</p>
+        <%=players.grandslams%>
+      </span>
+      <span>
+        <i class="user icon"></i>
+        <%=players.age%> years old
+      </span>
+    </div>
+    <a id="edit" class="ui basic button blue" href='/players/<%=players._id%>/edit'>Edit</a>
+  </div>
+</div>
+
+<% include ./partials/footer %> 

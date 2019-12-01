@@ -31,4 +31,38 @@ router.post('/players', function(req,res){
     })
 })
 
+// show specific player
+router.get('/players/:id', function(req,res){
+    Player.findById(req.params.id, function(error, foundPlayer){
+        if(error){
+            res.redirect('/players')
+        } else {
+            res.render('show', {players:foundPlayer})
+        }
+    })
+})
+
+//get route edit player page
+router.get('/players/:id/edit', function(req,res){
+    Player.findById(req.params.id, function(error, player){
+        if(error){
+            res.redirect('/players')
+        } else {
+            res.render('edit', {players:player})
+        }
+    })
+})
+
+//update player with new params 
+router.put('/players/:id', function(req,res){
+    Player.findByIdAndUpdate(req.params.id, req.body.players, function(err,updatedPlayer){
+        if(err){
+            res.redirect('/players');
+        } else {
+            res.redirect('/players/' + req.params.id);
+        }
+    });
+});
+
+
 module.exports = router;
