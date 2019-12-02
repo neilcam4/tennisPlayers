@@ -5,7 +5,10 @@ let mongoose = require('mongoose')
 let playerRoutes = require("./routes/playerRoutes")
 let authRoutes = require('./routes/authRoutes')
 let methodOverride = require("method-override")
-let Player = require("./models/Player")
+let Player = require("./models/Player");
+let passport = require('passport');
+var LocalStrategy=require('passport-local');
+var passportlocalMongoose = require('passport-local-mongoose');
 
 mongoose.connect("mongodb://localhost/tennisplayers_app", function(err, db){
     if(err){
