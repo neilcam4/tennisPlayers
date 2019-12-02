@@ -1,6 +1,5 @@
 # Tennis Players Hall of Fame
 
-[User Stories]
 This is an app to add, read, update and delete tennis players from the Hall of Fame.
 
 # User Stories
