@@ -4,8 +4,8 @@ This is an app to add, read, update and delete tennis players from the Hall of F
 
 # User Stories
 
-`A User can
+`A User can`
 
-When visiting the home page
+`When visiting the home page`
 
-Can see all current members of the Tennis Hall of Fame`
+`Can see all current members of the Tennis Hall of Fame`
