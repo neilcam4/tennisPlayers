@@ -1,11 +1,6 @@
 <% include ./partials/header %>
 
-
-
 <% players.forEach(function(players){ %>
-    
-    
-
 <div class="ui link cards centered">
   <div class="card">
     <div class="image">
@@ -22,7 +17,7 @@
     </div>
     <div class="extra content">
       <span class="right floated">
-        <%=players.titles%>
+        Grand Slams: <%=players.titles%>
       </span>
       <span>
         <i class="user icon"></i>
@@ -32,5 +27,4 @@
   </div>
 </div>
 <% }) %>
-
 <% include ./partials/footer %> 
