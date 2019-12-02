@@ -1,6 +1,6 @@
 var express = require('express')
 var User = require('../models/User')
-
+var passport = require('passport');
 let router = express.Router()
 //get the login page
 router.get('/login', function(req,res){
@@ -12,9 +12,10 @@ router.get('/register', function(req,res){
 })
 // register as a user post parameters
 router.post('/register', function(req,res){
-    User.create(new User({username:req.body.username}), req.body.password,function(error, user){
-        if(error){
-            console.log("not creating users");
+    let newUser = new User({username:req.body.username})
+    User.register(newUser, req.body.password,function(err, user){
+        if(err){
+            console.log(err);
             res.render("register");
         } 
         passport.authenticate("local")(req,res,function(){
