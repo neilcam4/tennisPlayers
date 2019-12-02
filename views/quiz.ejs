@@ -1,0 +1,82 @@
+<% include ./partials/header %>
+<div class="ui main text container segment" style="margin-top:80px;">
+
+    
+    <div class="text container ">
+        <h1> Fractions to Percentages Quiz</h1>
+        <p>Note: do not leave any spaces in your answer example: 35%</p>
+        <form id="quiz" name ="quiz" class="ui form">
+            <p>1.   Convert 2/5 into a percentage</p>
+            <input id="textbox" type= "text" name = "question1">
+            
+            <p>2.   Convert 17/20 into a percentage</p>
+            <input id="textbox" type= "text" name = "question2">
+            
+            <p>3.   Convert 120/500 into a percentage </p>
+            <input id="textbox" type= "text" name = "question3">
+            
+            <p>4.   Convert 8/9 into a percentage</p>
+            <input id="textbox" type= "text" name = "question4">
+            
+            <p>5.   Convert 1238/2500 into a percentage</p>
+            <input id="textbox" type= "text" name = "question5">
+        
+        <p><input class="ui blue button" id="button" type="button" value="Check Answers" onclick = "check()"></p>
+        </form>
+            </div>
+        
+        <div id="after_submit">
+            <p id="message"></p>
+            <p id ="number_correct"></p>
+            <img id="picture">
+        </div>
+<script>
+    function check() {
+    var question1 = document.quiz.question1.value;
+    var question2 = document.quiz.question2.value;
+    var question3 = document.quiz.question3.value;
+    var question4 = document.quiz.question4.value;
+    var question5 = document.quiz.question5.value;
+    var correct = 0;
+    var points=0;
+    
+    if(question1 == "40%"){
+        correct++
+    }
+    if(question2 == "85%"){
+        correct++
+    }
+    if(question3 == "24%"){
+        correct++
+    }
+    if(question4 == "88.9%"){
+        correct++
+    }
+    if(question5 == "49.5%"){
+        correct++
+    }
+    
+    var messages = ["Very well done! You have achieved 1 excellent slip from Mr Campbell", "That was ok", "Please try this again"];
+    var pictures = ["https://media.giphy.com/media/xT1XGx3mIWL2J6PMWc/giphy.gif", "https://media.giphy.com/media/12Vujj7Zh7dTPy/giphy.gif", "https://media.giphy.com/media/3oKIPgsesMuaaa4rfO/giphy.gif"];
+    var score;
+        var points=0;
+    
+    if(correct < 2){
+        score=2;
+    }
+    if (correct >1 && correct < 4){
+        score = 1
+    }
+    if (correct > 4){
+        score=0;
+    }
+    document.getElementById("after_submit").style.visibility = "visible";
+    document.getElementById("message").innerHTML = messages[score];
+    document.getElementById("number_correct").innerHTML = "You answered " + correct + " questions correctly.";
+    document.getElementById("picture").src=pictures[score];
+}
+    
+</script> 
+</div>
+
+<% include ./partials/footer %> 

@@ -1,13 +1,14 @@
-var express = require('express')
-var mongoose = require("mongoose")
+var express=require('express');
 
-var playerSchema = mongoose.Schema ({
+var mongoose=require('mongoose');
+
+var tennisSchema = mongoose.Schema({
     name:String,
-    age: Number,
-    grandslams : Number,
-    country: String
-})
+    age:Number,
+    titles:Number,
+    nationality:String
+});
 
-var Player = mongoose.model("Player", playerSchema)
+var Player = mongoose.model("Player", tennisSchema);
 
-module.exports = Player;
+module.exports=mongoose.model("Player", tennisSchema);

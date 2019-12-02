@@ -1,5 +1,4 @@
 <% include ./partials/header %>
-
 <div class="ui link cards centered">
   <div class="card">
     <div class="image">
@@ -8,26 +7,25 @@
     <div class="content">
       <div class="header"><%=players.name%></div>
       <div class="meta">
-        <a href="/players/<%=players._id %>">Read More</a>
+        <a>Tennis Legends</a>
       </div>
       <div class="description">
-        <%=players.country%>
+        <%=players.nationality%>
       </div>
     </div>
     <div class="extra content">
-      <span class="right floated"><p>Grand Slams:</p>
-        <%=players.grandslams%>
+      <span class="right floated">
+        <%=players.titles%>
       </span>
       <span>
         <i class="user icon"></i>
-        <%=players.age%> years old
+        <p>Age:</p> <%=players.age%>
       </span>
-    </div>
-    <a id="edit" class="ui basic button blue" href='/players/<%=players._id%>/edit'>Edit</a>
-    <form action ='/players/<%=players._id%>?_method=DELETE' method="POST" id="delete"><button class="ui red basic button">
+    </div>  
+      <a id="edit" class="ui basic button blue" href='/players/<%=players._id%>/edit'>Edit</a>
+      <form action ='/players/<%=players._id%>?_method=DELETE' method="POST" id="delete"><button class="ui red basic button">
   Delete
 </button></form>
   </div>
 </div>
-
 <% include ./partials/footer %> 
