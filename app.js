@@ -3,15 +3,9 @@ let app = express()
 let bodyParser = require('body-parser')
 let mongoose = require('mongoose')
 let playerRoutes = require("./routes/playerRoutes")
+let authRoutes = require('./routes/authRoutes')
 let methodOverride = require("method-override")
 let Player = require("./models/Player")
-// mongoose.connect("mongodb://neilcam4:Wanaka10@ds041758.mlab.com:41758/tennis_players", function(error, db){
-//     if(error){
-//         console.log("error DB")
-//     } else {
-//         console.log("DB is connected")
-//     }
-// })
 
 mongoose.connect("mongodb://localhost/tennisplayers_app", function(err, db){
     if(err){
@@ -32,7 +26,8 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
 app.use(methodOverride("_method"));
 
-app.use(playerRoutes)        
+app.use(playerRoutes) 
+app.use(authRoutes)       
 
 
 app.listen(port, function(err){

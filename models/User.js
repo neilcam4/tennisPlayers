@@ -2,7 +2,7 @@ let express = require('express')
 let mongoose = require('mongoose')
 
 var userSchema = mongoose.Schema({
-    name: String,
+    username: String,
     email: String
 })
 
