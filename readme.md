@@ -1,5 +1,5 @@
 # Tennis Players Hall of Fame
-[User Stories](#User-Stories) || [Technologies Used](#Technology)
+[User Stories](#User-Stories) || [Technologies Used](#Technology) ||[Instructions](#Instructions)
 
 This is an app to add, read, update and delete tennis players from the Hall of Fame.
 
