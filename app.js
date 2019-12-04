@@ -1,4 +1,4 @@
-
+require('dotenv').config();
 var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
@@ -12,8 +12,22 @@ var User = require('./models/user');
 var Player = require('./models/player')
 var authRoutes = require('./routes/index');
 var playerRoutes=require('./routes/tennisplayers')
-
-mongoose.connect("mongodb://localhost/tennisplayers_app");
+let MONGODB_KEY = process.env.MONGODB_KEY
+mongoose.connect(MONGODB_KEY, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
+.then(() => console.log('DB Connected!'))
+.catch(err => {
+    console.log("DB Connection Error");
+});
+// mongoose.connect("mongodb://Admin:bokky11@ds041758.mlab.com:41758/tennis_players", function(error, db){
+//     if(error){
+//         console.log("database problem")
+//     } else {
+//         console.log("MLAB DB is running")
+//     }
+// })
 app.set('view engine', 'ejs');
 app.use(require('express-session')({
         secret:"Wanaka is great",
@@ -37,6 +51,6 @@ app.listen(port, function(err){
     if(err){
         console.log(err);
     } else {
-        console.log("Server is running");
+        console.log("Server is running, listening on port " + port);
     }
 });
